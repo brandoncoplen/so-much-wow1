@@ -8,6 +8,11 @@ $(function() {
     $stop_counter = $( "#event-stop" ),
     counts = [ 0, 0, 0 ];
 
+    $("button").click(function(){
+      var x = $("doge-meme-pic").position();
+      alert("Top position: " + x.top + " Left position: " + x.left);
+    });
+
   $( "#doge-meme-pic" ).draggable({
     start: function() {
       counts[ 0 ]++;
@@ -21,6 +26,7 @@ $(function() {
     stop: function() {
       counts[ 2 ]++;
       updateCounterStatus( $stop_counter, counts[ 2 ] );
+
     }
   });
 
