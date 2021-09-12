@@ -6,8 +6,12 @@ body {
   height: 80vh;
 }
 
-#claculateWow {
+#wow-output {
   color:aqua;
+}
+
+#navbar-brand{
+  color:blueviolet
 }
 
 
