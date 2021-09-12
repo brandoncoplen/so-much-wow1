@@ -1,14 +1,7 @@
 $(function() {
-    console.log("document is ready!");
+  console.log("document is ready!");
 
-    
-
-    var $start_counter = $( "#event-start" ),
-    $drag_counter = $( "#event-drag" ),
-    $stop_counter = $( "#event-stop" ),
-    counts = [ 0, 0, 0 ];
-
-    $("#doge-meme-pic").draggable({
+  $("#doge-meme-pic").draggable({
       containment: "#containment-wrapper",
       scroll: false,
       stop: function() {
