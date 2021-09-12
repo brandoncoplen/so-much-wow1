@@ -6,6 +6,11 @@ body {
   height: 80vh;
 }
 
+#claculateWow {
+  color:aqua;
+}
+
+
 #doge-meme-pic {
   height: 50vh;
   width: auto;
