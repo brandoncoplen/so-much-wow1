@@ -5,6 +5,9 @@ body {
 #containment-wrapper {
   height: 80vh;
 }
+#wow{
+  color: blueviolet;
+}
 
 #wow-output {
   color:aqua;
