@@ -4,6 +4,31 @@
 
 <html lang="en">
 
+<style>
+  .button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+.button:hover {background-color: #45be49}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
+
+
 
 
 <head>
@@ -40,7 +65,21 @@
         <li id="event-stop" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-stop"></span>&quot;stop&quot; invoked <span class="count">0</span>x</li>
       </ul>
     <img id="doge-meme-pic" class="img-fluid" src="img/many-wow.jpeg" alt="wow doge meme">
-    <button class="btn-secondary"></button>
+
+<button class="button">Click Me</button>
+ <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <p class="navbar-brand">how much wow do you have?</p>
+    </nav>
+
+    <div class="row">
+        <div id="containment-wrapper" class="col-sm-8">
+            <img id="doge-meme-pic" src="img/many-wow.jpeg" alt="wow doge meme">
+        </div>
+        <div id="wow-output" class="col-sm-4">
+            <!-- the output  -->
+        </div>
+    </div>
+
 </body>
 
 

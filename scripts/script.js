@@ -8,53 +8,27 @@ $(function() {
     $stop_counter = $( "#event-stop" ),
     counts = [ 0, 0, 0 ];
 
-    $("button").click(function(){
-      var x = $("doge-meme-pic").position();
-      alert("Top position: " + x.top + " Left position: " + x.left);
-    });
-
-  $( "#doge-meme-pic" ).draggable({
-    start: function() {
-      counts[ 0 ]++;
-      updateCounterStatus( $start_counter, counts[ 0 ] );
-    },
-    drag: function() {
-      counts[ 1 ]++;
-      updateCounterStatus( $drag_counter, counts[ 1 ] );
-     
-    },
-    stop: function() {
-      counts[ 2 ]++;
-      updateCounterStatus( $stop_counter, counts[ 2 ] );
-
-    }
+    $("#doge-meme-pic").draggable({
+      containment: "#containment-wrapper",
+      scroll: false,
+      stop: function() {
+          calculateWow();
+      }
   });
 
-  function updateCounterStatus( $event_counter, new_count ) {
-   
-    if ( !$event_counter.hasClass( "ui-state-hover" ) ) {
-      $event_counter.addClass( "ui-state-hover" )
-        .siblings().removeClass( "ui-state-hover" );
-    }
-    
-    $( "span.count", $event_counter ).text( new_count );
+  function calculateWow() {
+      var x = $("#doge-meme-pic").position();
+      var wow = x.top + x.left;
 
-    calculateWow(new_count); 
+      if (wow < 500) {
+
+          console.log('not much wow (' + wow + ')');
+          $('#wow-output').html('<h2>not much wow (' + wow + ')</h2>')
+
+      } else {
+          console.log('so much wow (' + wow + ')!!!!');
+          $('#wow-output').text('so much wow (' + wow + ')!!')
+      }
   }
-
-function calculateWow (xyz){
-
-    if(xyz < 500){
-
-        console.log('not much wow (' + xyz +  ')');
-        $("#wow").html("not much wow");
-
-    }
-    else {
-
-        console.log('so much wow (' + xyz +  ')!!!!');
-        $("#wow").html("much wow");
-    }
-}
 
 });
