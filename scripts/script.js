@@ -1,5 +1,10 @@
+var wow;
 $(function() {
   console.log("document is ready!");
+
+  
+
+ 
 
   $("#doge-meme-pic").draggable({
       containment: "#containment-wrapper",
@@ -8,10 +13,11 @@ $(function() {
           calculateWow();
       }
   });
-
+  
+  
   function calculateWow() {
       var x = $("#doge-meme-pic").position();
-      var wow = x.top + x.left;
+        wow = x.top + x.left;
 
       if (wow < 500) {
 
@@ -25,3 +31,33 @@ $(function() {
   }
 
 });
+
+$("#guess").keyup(function(e) {
+    e.preventDefault();
+    this.value = this.value.replace(/[^0-9\.]/g, "");
+    $(this).text("remember, no letters!");
+});
+
+$('#submitBtn').click(function() {
+    guessed = $('#guess').val();
+
+    btnMsg = "Your guess is: ";
+    $('#btnOutput').append(btnMsg + guessed);
+
+    console.log(btnMsg);
+});
+
+$('#resultBtn').click(function() {
+    
+    result = wow + guessed;
+
+    rBtnMsg = "Your result is: ";
+    $('#result').append(rBtnMsg + result);
+
+    console.log(rBtnMsg);
+});
+
+
+
+
+

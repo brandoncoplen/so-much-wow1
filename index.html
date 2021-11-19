@@ -22,6 +22,14 @@
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <p class="navbar-brand">how much wow do you have?</p>
     </nav>
+    
+        <form id="guessForm" name="guessForm">
+            <label for="guess" class="form-label">Your Guess</label>
+            <input TYPE="text" class="form-control" name="guess" id="guess" placeholder="Enter WOW guess(numbers only)">
+            <button id="submitBtn" class="btn btn-primary" type="button">Enter</button>
+            <div id="btnOutput"></div>
+        </form>
+    <!-- <div id="btnOutput"></div> -->
 
     <div class="row">
         <div id="containment-wrapper" class="col-sm-8">
@@ -31,6 +39,9 @@
            
         </div>
     </div>
+<label for="result" class="label">How well did you guess?</label>
+<button id="resultBtn" class="btn btn-primary" type="button">Get Result</button>
+<div id="result"></div>
 </body>
 
 
