@@ -32,13 +32,15 @@ $(function() {
 
 });
 
-$("#guess").keyup(function(e) {
+
+
+$("#guess").keyup(function(e) { //code to make sure the user doesnt type leters
     e.preventDefault();
     this.value = this.value.replace(/[^0-9\.]/g, "");
     $(this).text("remember, no letters!");
 });
 
-$('#submitBtn').click(function() {
+$('#submitBtn').click(function() { //displays the guess that the user made
     guessed = $('#guess').val();
 
     btnMsg = "Your guess is: ";
@@ -47,15 +49,35 @@ $('#submitBtn').click(function() {
     console.log(btnMsg);
 });
 
-$('#resultBtn').click(function() {
-    
-    result = wow + guessed;
+$('#resultBtn').click(function() { //calculates and displays how good the guess was
+    wow = Number(wow);
+    guessed = Number(guessed);
+    // result = wow + guessed;
 
-    rBtnMsg = "Your result is: ";
-    $('#result').append(rBtnMsg + result);
+    // rBtnMsg = "Your result is: ";
+    // $('#result').append(rBtnMsg + result);
 
-    console.log(rBtnMsg);
+    // console.log(rBtnMsg);
+
+    if (guessed == wow) {
+        rBtnMsg = "WOW INFINITE!!!</br>";
+        $('#result').append(rBtnMsg);
+    }
+    if (guessed < wow) {
+        rBtnMsg="WOW guess(" + guessed +") too low </br>";
+        $('#result').append(rBtnMsg);
+    }
+    if (guessed > wow) {
+        rBtnMsg="WOW guess(" + guessed + ") too high </br>";
+        $('#result').append(rBtnMsg);
+    }
+    // else {
+    //     rBtnMsg = "you suck";
+    //     $('#result').append(rBtnMsg);
+    // }
 });
+
+
 
 
 
